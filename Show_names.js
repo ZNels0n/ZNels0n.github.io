@@ -19,7 +19,7 @@ function Save_data(names_list){
     const link = document.createElement("a");
     var nameBlob = new Blob([names_list],{type:'text/plain'});
     link.setAttribute('href', URL.createObjectURL(nameBlob));
-    link.setAttribute('download', 'Familiarnames.csv');
+    link.setAttribute('download', 'FamiliarNames.csv');
     link.click();
     URL.revokeObjectURL(link.href);
 }
@@ -42,5 +42,6 @@ function displayNextName() {
 
 
 // Start the survey
-
+const userNameInput = document.getElementById('user-name');
+userNameInput.addEventListener('input', function() {const userName = userNameInput.value;});
 displayNextName();
