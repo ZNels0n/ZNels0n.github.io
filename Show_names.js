@@ -4,6 +4,7 @@
 // This creates the completed Selected names List
 let names = ['Albert Einstein', 'Bill Gates', 'Michael Jackson','Oprah Winfrey','Leonardo DiCaprio','Elon Musk','Serena Williams','Winston Churchill','Abraham Lincoln','Marilyn Monroe','David Beckham','Barack Obama','Emma Watson','Taylor Swift','Steve Jobs','Dwayne Johnson','Princess Diana' ,'Kobe Bryant' ,'Nikola Tesla' ,'Bruce Lee' ,'Michael Jordan','Meryl Streep','James Cameron'  ,'Usain Bolt','Muhammad Ali','Freddie Mercury','John F. Kennedy','Lady Gaga'];
 let familiarNames = ["names","Brian Davis", "Sarah Brown", "David Taylor", "Laura Anderson", "Richard Bailey", "Alice Perez", "George Sanchez", "Emily Jackson", "Frank Collins", "Nancy Scott"]
+let ID = ["ID",0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2]
 let currentIndex = 0;
 
 function markFamiliar(isFamiliar) {
@@ -11,7 +12,7 @@ function markFamiliar(isFamiliar) {
         familiarNames.push(names[currentIndex]);
     }
     currentIndex++;
-    if (familiarNames.length < 21) {
+    if (familiarNames.length < 20) {
         displayNextName();
     } else {
         endSurvey();
@@ -42,6 +43,9 @@ function endSurvey() {
     const userName = userNameInput ? userNameInput.value.trim() : 'defaultUserName';
     for (let i = 0; i < 10; i++) {
         familiarNames.push(userName)
+    }
+    for (let i =0; i < familiarNames.length;i++){
+        familiarNames[i] = familiarNames[i] + "," + ID[i]
     }
     Save_data(familiarNames.join(",\n"))
 }
