@@ -51,7 +51,7 @@ function endSurvey() {
 }
 
 function displayNextName() {
-    if (currentIndex < names.length) {
+    if (currentIndex <= names.length) {
         document.getElementById("name-display").innerText = names[currentIndex];
     } else {
         endSurvey();
