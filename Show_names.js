@@ -12,7 +12,7 @@ function markFamiliar(isFamiliar) {
         familiarNames.push(names[currentIndex]);
     }
     currentIndex++;
-    if (familiarNames.length < 20) {
+    if (familiarNames.length <= 20) {
         displayNextName();
     } else {
         endSurvey();
